@@ -9,6 +9,7 @@ AboutProgram::AboutProgram(QWidget *parent) : QDialog(parent, Qt::WindowTitleHin
     githubLink->setOpenExternalLinks(true);
     licenceLabel = new QLabel("Электронная почта: <a href=\"belcev.76@mail.ru\">belcev.76@mail.ru</a><br>"
                               "Разработчик: Бельцев Ярослав Владимирович<br>"
+                              "Тестировщик: Барков Андрей Максимович<br>"
                               "Приложение свободно для копирования и использования");
 
     licenceLabel->setOpenExternalLinks(true);

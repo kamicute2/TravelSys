@@ -321,6 +321,11 @@ void MainWindow::on_make_triggered()
     file.setFileName(fileName);
     file.open(QIODevice::ReadWrite);
     file.close();
+    if(list.length() != 0){
+        list.delAllList();
+    }
+    drawTable();
+    isModified = false;
     if(!isShow)
         showMain();
 }
@@ -336,9 +341,7 @@ void MainWindow::on_open_triggered()
     }
     filePath = fileName;
     if(list.length() != 0){
-        qDebug()<<"cleaning list";
         list.delAllList();
-        qDebug()<<list.length();
     }
 
     QFile file(fileName);
@@ -351,7 +354,6 @@ void MainWindow::on_open_triggered()
     for(int i = 0; i < length; i++){
         int type;
         stream>>type;
-        qDebug()<<"get "<<type<<" type";
         try{
             if(type == 1){
                 int id;
@@ -410,25 +412,12 @@ void MainWindow::on_open_triggered()
         }
 
     }
-    qDebug()<<"readed!"<<list.length();
     file.close();
     drawTable();
     isModified = false;
     if(!isShow)
         showMain();
 }
-
-void MainWindow::on_aboutProgramm_triggered()
-{
-    AboutProgram* window = new AboutProgram(this);
-    window->exec();
-}
-
-//void MainWindow::on_manualAction_triggered()
-//{
-//    ManualBox* window = new ManualBox(this);
-//    window->exec();
-//}
 
 void MainWindow::on_save_triggered()
 {
@@ -455,7 +444,6 @@ void MainWindow::on_saveAs_triggered()
     file.open(QIODevice::ReadWrite);
     writeToFile(file);
     file.close();
-    qDebug()<< "write";
 }
 
 void MainWindow::writeToFile(QFile &file){
@@ -464,13 +452,9 @@ void MainWindow::writeToFile(QFile &file){
     if(list.length() == 0){
         return;
     }
-
-    qDebug() << list.length();
     for(int i = 0; i< list.length() ; i++){
         int id = list[i]->getTypeTour();
-        qDebug() << id;
         if(id == 1){
-            //StandartClient* sClient = dynamic_cast<Client*>(list[i]);
             stream<<1
             <<list[i]->getId()
             <<list[i]->getName()
@@ -511,7 +495,6 @@ void MainWindow::writeToFile(QFile &file){
 
 void MainWindow::on_exit_triggered()
 {
-    qDebug()<<"exiting...";
     if(isModified){
         QMessageBox::StandardButton ret;
         ret = QMessageBox::warning(this, "Text editor",
@@ -528,6 +511,18 @@ void MainWindow::on_exit_triggered()
 
     }
     this->close();
+}
+
+void MainWindow::on_aboutProgramm_triggered()
+{
+    AboutProgram* window = new AboutProgram(this);
+    window->exec();
+}
+
+void MainWindow::on_guide_triggered()
+{
+    ManualBox* window = new ManualBox(this);
+    window->exec();
 }
 
 //---------------Тут кнопки главного меню---------------------

@@ -313,6 +313,8 @@ void Form::on_buttonBox_accepted()
             if (ui->idLineEdit->text() == "" || ui->passLineEdit->text() == "" || ui->nameLineEdit->text() == ""
                     || ui->countryBox->currentIndex() == 0 || ui->tourBox->currentIndex() == 0 || ui->priceLineEdit->text() == "")
                 QMessageBox::warning(this, "Пустые поля","Заполните все поля! \n",QMessageBox::Ok, QMessageBox::Ok);
+            else if(ui->passLineEdit->text().length() != 11)
+                QMessageBox::warning(this, "Неверное значение","Неверное значение паспорта! \n",QMessageBox::Ok, QMessageBox::Ok);
             else
                 accept();
             break;
@@ -322,6 +324,8 @@ void Form::on_buttonBox_accepted()
             if (ui->idLineEdit->text() == "" || ui->passLineEdit->text() == "" || ui->nameLineEdit->text() == ""
                     || ui->countryLineEdit->text() == "" || ui->typeHousingLineEdit->text() == "" || ui->priceLineEdit->text() == "")
                 QMessageBox::warning(this, "Пустые поля","Заполните все поля! \n",QMessageBox::Ok, QMessageBox::Ok);
+            else if(ui->passLineEdit->text().length() != 11)
+                QMessageBox::warning(this, "Неверное значение","Неверное значение паспорта! \n",QMessageBox::Ok, QMessageBox::Ok);
             else
                 accept();
             break;
@@ -331,6 +335,8 @@ void Form::on_buttonBox_accepted()
             if (ui->idLineEdit->text() == "" || ui->passLineEdit->text() == "" || ui->nameLineEdit->text() == "" || ui->tourBox->currentIndex() == 0
                     || ui->countryLineEdit->text() == "" || ui->typeHousingLineEdit->text() == "" || ui->priceLineEdit->text() == "")
                 QMessageBox::warning(this, "Пустые поля","Заполните все поля! \n",QMessageBox::Ok, QMessageBox::Ok);
+            else if(ui->passLineEdit->text().length() != 11)
+                QMessageBox::warning(this, "Неверное значение","Неверное значение паспорта! \n",QMessageBox::Ok, QMessageBox::Ok);
             else
                 accept();
             break;

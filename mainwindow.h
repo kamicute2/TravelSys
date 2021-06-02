@@ -7,6 +7,7 @@
 #include "client.h"
 #include "List.h"
 #include "aboutprogram.h"
+#include "manualbox.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -49,6 +50,8 @@ private slots:
     void on_findComboBox_currentIndexChanged(int index);
 
     void on_aboutProgramm_triggered();
+
+    void on_guide_triggered();
 
 private:
     void drawTable();

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>KitsuneTravel</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -180,7 +180,7 @@
          <string/>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="images.qrc">
           <normaloff>:/img/find_but</normaloff>:/img/find_but</iconset>
         </property>
         <property name="iconSize">
@@ -429,6 +429,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

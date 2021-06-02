@@ -1,5 +1,22 @@
 <RCC>
     <qresource prefix="/img">
         <file alias="find_but">a.png</file>
+        <file>icon.ico</file>
+        <file>icon.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>manual.files/image001.png</file>
+        <file>manual.files/image003.png</file>
+        <file>manual.files/image005.png</file>
+        <file>manual.files/image007.png</file>
+        <file>manual.files/image009.png</file>
+        <file>manual.files/image011.png</file>
+        <file>manual.files/image013.png</file>
+        <file>manual.files/image015.png</file>
+        <file>manual.files/image016.png</file>
+        <file>manual.files/image019.png</file>
+        <file>manual.files/image021.png</file>
+        <file>manual.files/image024.png</file>
+        <file>manual.files/image026.png</file>
     </qresource>
 </RCC>
